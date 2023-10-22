@@ -46,12 +46,16 @@ git checkout test
 git merge top_N
 ```
 
+I think it would merge top_N into the test branch (i.e. the test branch is the one that would change), so process_movie_data.py would have the updated top_n function.
+
 6. What do you think would happen if you ran the following commands?
 What branches would change, and how?
 ```
 git checkout top_ten
 git merge test
 ```
+
+I think it would merge test into the top_ten branch, so the quiz.md file will be renamed to answers.md.
 
 7. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -60,3 +64,5 @@ git checkout test
 git rebase top_ten
 git rebase top_N
 ```
+
+The test branch is being changed, and there is a merge conflict after running git rebase top_N because both rebases try to change process_movie_data.py. We manually resolve this by adapting the find_top_n function.
